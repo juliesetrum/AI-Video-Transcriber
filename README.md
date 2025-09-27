@@ -2,7 +2,7 @@
 
 # AI Video Transcriber
 
-English | [中文](README_ZH.md)
+English 
 
 An AI-powered video transcription and summarization tool that supports multiple video platforms including YouTube, Tiktok, Bilibili, and 30+ platforms.
 
@@ -33,9 +33,6 @@ An AI-powered video transcription and summarization tool that supports multiple 
 #### Method 1: Automatic Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/wendy7756/AI-Video-Transcriber.git
-cd AI-Video-Transcriber
 
 # Run installation script
 chmod +x install.sh
@@ -45,9 +42,7 @@ chmod +x install.sh
 #### Method 2: Docker
 
 ```bash
-# Clone the repository
-git clone https://github.com/wendy7756/AI-Video-Transcriber.git
-cd AI-Video-Transcriber
+
 
 # Using Docker Compose (easiest)
 cp .env.example .env
@@ -323,7 +318,6 @@ docker pull hello-world
 - English
 - Chinese (Simplified)
 - Japanese
-- Korean
 - Spanish
 - French
 - German
@@ -356,13 +350,6 @@ We welcome Issues and Pull Requests!
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-
-## Acknowledgments
-
-- [yt-dlp](https://github.com/yt-dlp/yt-dlp) - Powerful video downloading tool
-- [Faster-Whisper](https://github.com/guillaumekln/faster-whisper) - Efficient Whisper implementation
-- [FastAPI](https://fastapi.tiangolo.com/) - Modern Python web framework
-- [OpenAI](https://openai.com/) - Intelligent text processing API
 
 ## 📞 Contact
 
